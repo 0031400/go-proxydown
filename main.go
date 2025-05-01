@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	port := flag.String("p", "8080", "port of the server")
+	port := flag.String("port", "8080", "port of the server")
 	host := flag.String("host", "127.0.0.1", "the host of the server")
 	flag.Parse()
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
@@ -28,10 +28,13 @@ func main() {
 				w.Header().Add(key, value)
 			}
 		}
+		if resp.StatusCode == http.StatusNotFound {
+			w.WriteHeader(http.StatusNotFound)
+			return
+		}
 		if strings.Contains(resp.Header.Get("Content-Type"), "text/html") {
 			w.Header().Set("Content-Type", "text/plain")
 		}
-		w.Header().Set("Cache-Control", "public, max-age=315360000")
 		_, err = io.Copy(w, resp.Body)
 		if err != nil {
 			w.WriteHeader(http.StatusInternalServerError)

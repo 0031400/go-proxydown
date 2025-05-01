@@ -1,0 +1,12 @@
+[Unit]
+Description=proxydown
+After=network.target
+
+[Service]
+ExecStart=/home/lxz/service/proxydown/proxydown --host [::] --port 3636
+Restart=always
+User=lxz
+Group=lxz
+
+[Install]
+WantedBy=multi-user.target
