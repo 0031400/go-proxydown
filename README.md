@@ -6,6 +6,7 @@ A proxy download tool written in golang.
 GET /?url=<your download url>
 ### feature
 when the response is a html.It will transform it into plain text.
+It has a cache setting.The cache is 100 year.
 ### config
 |config|example|
 |-|-|
