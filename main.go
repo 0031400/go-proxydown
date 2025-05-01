@@ -7,6 +7,7 @@ import (
 	"log"
 	"net/http"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -38,6 +39,7 @@ func main() {
 			log.Println(err)
 			return
 		}
+		log.Println(url, r.RemoteAddr, time.Now().Format("2006-01-02 15:04:05"))
 	})
 	ListenAddr := fmt.Sprintf("%s:%s", *host, *port)
 	fmt.Printf("The server is listen on %s\n", ListenAddr)

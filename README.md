@@ -12,3 +12,7 @@ It has a cache setting.The cache is 100 year.
 |-|-|
 |host|0.0.0.0|
 |port|8080|
+### log
+It has a simple log for the successful proxydown.
+### run
+./proxydown --host [::] --port 8080
