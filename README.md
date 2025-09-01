@@ -10,11 +10,11 @@ when the response is a html.It will transform it into plain text.
 |config|example|
 |-|-|
 |host|0.0.0.0|
-|port|8080|
+|port|18080|
 ### log
 It has a simple log for the successful proxydown.
 ### run
-./proxydown --host [::] --port 8080
+./proxydown --host [::] --port 18080
 ### nginx
 the example nginx config is on `proxydown.conf`
 ### service

@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	port := flag.String("port", "8080", "port of the server")
+	port := flag.String("port", "18080", "port of the server")
 	host := flag.String("host", "127.0.0.1", "the host of the server")
 	flag.Parse()
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
